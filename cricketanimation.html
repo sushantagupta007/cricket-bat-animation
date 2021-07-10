@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket</title>
+    <style>
+        .field{
+            max-width:100%;
+            max-height: 650px;
+            border: 1px solid black;
+        }
+        
+        img{
+           height:595px; 
+        }
+        .field:hover .bat{
+            transform: rotate(-25deg);
+            transform-origin: top right;
+            transition: trasform 0.2s ease-in-out;
+            
+        }
+        
+        .ball{
+            width:40px;
+            height:40px;
+            border-radius: 50%;
+            background-color: red;
+            position: relative;
+            left:280px;
+            top:-150px;
+        }
+
+        .field:hover .ball{ 
+          animation: ballhit 10s ease-in-out 0.1s infinite;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width:20px;
+            height:80px;
+            background-color: sandybrown;
+           
+        }
+        #box-1{
+            position: relative;
+            left:1310px;
+            top:-300px
+        }
+        #box-2{
+            position: relative;
+            left:1310px;
+            top:-500px;
+        }
+        #box-3{
+            position: relative;
+            left:1310px;
+            top:-700px;
+         }
+         #box-4{
+            position: relative;
+            left:1310px;
+            top:-880px;
+         }
+        
+
+         @keyframes ballhit {
+             0%{
+                transform: none;
+                transition: none;
+                background-color: red;
+             }
+             15%{
+                transform: translate(1011px,-100px); 
+                transition: transform 0.5s ease-in-out 0.2s;
+                background-color:green;
+             }
+             30%{
+                transform: none;
+                transition: none;
+                background-color:yellow;
+             }
+             40%{
+                transform: translate(1011px,-200px); 
+                transition: transform 0.5s ease-in-out 0.2s;
+                background-color: magenta;
+             }
+             60%{
+                transform: none;
+                transition: none;
+             }
+             75%{
+                transform: translate(1011px,-340px); 
+                transition: transform 0.5s ease-in-out 0.2s;
+             }
+             85%{
+                transform: none;
+                transition: none;
+             }
+             95%{
+                transform: translate(1011px,-440px); 
+                transition: transform 0.5s ease-in-out 0.2s;
+             }
+             100%{
+                transform: translate(0px,0px); 
+                transition: transform 0.5s ease-in-out 0.2s;
+           }
+         }       
+    </style>
+</head>
+<body>
+    <div class="field">
+        <img class="bat" src="./bat.png" alt="Bat">
+        <div class="ball"></div>
+        <div id="box-1" class="box">A </div>
+        <div id="box-2" class="box">B </div>
+        <div id="box-3" class="box">C </div>
+        <div id="box-4" class="box">D </div>
+        <audio>
+         <embed name="GoodEnough" src="./Cricket Bat Sound Theme.mp3" loop="false" hidden="true" autostart="true">
+        </audio>
+    </div>
+</body>
+</html>
